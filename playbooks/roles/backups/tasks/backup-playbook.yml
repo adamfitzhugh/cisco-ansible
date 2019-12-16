@@ -1,0 +1,16 @@
+#Backup configs
+
+- hosts: ios-devices
+  gather_facts: False
+
+  tasks:
+  - name: Config Backup of IOS Devices
+    ios_command:
+      commands:
+        - show running-config
+    register: config_output
+
+  - name: Store Output
+    copy:
+      content: "{{config_output.stdout[0]}}"
+      dest: "/home/adam/Labs{{inventory_hostname}}-config.txt"
