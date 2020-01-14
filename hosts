@@ -1,0 +1,11 @@
+#Hosts file
+
+[ios-devices]
+ios-1
+ios-2
+ios-3
+
+[nxos-devices]
+nxos-1
+nxos-2
+nxos-3
